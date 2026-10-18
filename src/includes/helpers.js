@@ -1,5 +1,5 @@
 /**
- * Generates a unique Japan Rail like confirmation code for bookings.
+ * Generates a unique Japan Rail-like confirmation code.
  * @returns {string} A unique confirmation code.
  */
 const generateConfirmationCode = () => {
@@ -8,8 +8,8 @@ const generateConfirmationCode = () => {
 
 /**
  * Converts kilometers to miles.
- * @param {number} km - The distance in kilometers.
- * @returns {number} The equivalent distance in miles.
+ * @param {number} km - Distance in kilometers.
+ * @returns {number} Distance in miles.
  */
 const kmToMiles = (km) => {
     const conversionFactor = 0.621371;
@@ -18,12 +18,12 @@ const kmToMiles = (km) => {
 
 /**
  * Converts Japanese Yen to US Dollars.
- * @param {number} yen - The amount in Japanese Yen.
- * @returns {number} The equivalent amount in US Dollars.
+ * @param {number} yen - Amount in Japanese Yen.
+ * @returns {number} Amount in US Dollars, rounded to two decimals.
  */
 const yenToUsd = (yen) => {
-    const exchangeRate = 0.0066; // Example rate: 1 Yen = 0.0066 USD
-    return yen * exchangeRate;
+    const exchangeRate = 0.0066;
+    return Number((Number(yen) * exchangeRate).toFixed(2));
 };
 
 export { generateConfirmationCode, kmToMiles, yenToUsd };
